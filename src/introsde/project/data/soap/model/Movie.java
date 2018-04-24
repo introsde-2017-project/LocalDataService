@@ -36,6 +36,11 @@ public class Movie implements Serializable{
 	
 	public Movie() {}
 	
+	public Movie(String name, MovieGen gen) {
+		this.name= name;
+		this.genere= gen;
+	}
+
 	public int getIdMovie() {
 		return idMovie;
 	}

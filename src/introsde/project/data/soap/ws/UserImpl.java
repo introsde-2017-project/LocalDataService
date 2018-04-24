@@ -29,8 +29,8 @@ public class UserImpl implements UserInterface{
 	@Override
 	public Person addNewPerson(Person person) {
 		Person p=Person.savePerson(person);
-		RecombeeDB.addUserMdb(p.getIdPerson(),p.getMovieGens());
-		RecombeeDB.addUserFdb(p.getIdPerson(),p.getFoodTypes());
+		//RecombeeDB.addUserMdb(p.getIdPerson(),p.getMovieGens());
+		//RecombeeDB.addUserFdb(p.getIdPerson(),p.getFoodTypes());
 		return p;
 	}
 

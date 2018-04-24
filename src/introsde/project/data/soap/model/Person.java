@@ -54,11 +54,26 @@ public class Person implements Serializable{
 	 @ElementCollection
 	 private List<MovieGen> movieGens;
 	 
-	 
-
 	 public Person() {}
-	 
-	 public List<MovieGen> getMovieGens() {
+
+	 public Person(String lastName,
+			 String firstName, 
+			 String userName, 
+			 String password, 
+			 String birthDate, 
+			 LinkedList<FoodType> fType,
+			 LinkedList<MovieGen> mGen
+			 ) {
+		this.firstName= firstName;
+		this.lastName= lastName;
+		this.userName= userName;
+		this.password= password;
+		this.birthDate= birthDate;
+		this.foodTypes=fType;
+		this.movieGens= mGen;
+	}
+
+	public List<MovieGen> getMovieGens() {
 			if(this.movieGens==null) 
 				this.movieGens= new LinkedList<>();
 		    return this.movieGens;
