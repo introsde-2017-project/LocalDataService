@@ -12,10 +12,10 @@ import introsde.project.adopter.recombee.soap.RecombeeInterface;
 
 
 public class RecombeeDB {
-	private static RecombeeImplService serviceImp;
-	private static RecombeeInterface serviceInt;
-	private static RecombeeClient mRecombeeId;
-	private static RecombeeClient fRecombeeId;
+	private  RecombeeImplService serviceImp;
+	private  RecombeeInterface serviceInt;
+	private  RecombeeClient mRecombeeId;
+	private  RecombeeClient fRecombeeId;
 	
 	public RecombeeDB(){
 		serviceImp =  new RecombeeImplService();
@@ -25,28 +25,28 @@ public class RecombeeDB {
 	}
 	
 	
-	public static int addRatingF(int itemId, int personId, double rating, Date timestemp) {			
+	public  int addRatingF(int itemId, int personId, double rating, Date timestemp) {			
 		return serviceInt.addRating(fRecombeeId, Integer.toString(personId), Integer.toString(itemId), rating, DateToXML.GregorianCalendar(timestemp));
 	}
-	public static int addRatingM(int itemId, int personId, double rating, Date timestemp) {			
+	public  int addRatingM(int itemId, int personId, double rating, Date timestemp) {			
 		return serviceInt.addRating(mRecombeeId, Integer.toString(personId), Integer.toString(itemId), rating, DateToXML.GregorianCalendar(timestemp));
 	}
 
 
-	public static List<Evaluation> getItemRatingsF(int itemId) {
+	public  List<Evaluation> getItemRatingsF(int itemId) {
 		//List<Rating> list= new ArrayList<Rating>();
 		//for(Rating r:serviceInt.getItemRating(fRecombeeId, Integer.toString(itemId))) {
 			//((Rating) r).getItemId();
 		//}
 		return null;
 	}
-	public static List<Evaluation> getItemRatingsM(int itemId) {
+	public  List<Evaluation> getItemRatingsM(int itemId) {
 		return null;
 		//return serviceInt.getItemRating(mRecombeeId, Integer.toString(itemId));
 	}
 
 
-	public static void addUserMdb(int idPerson, List<MovieGen> movieGens) {
+	public  void addUserMdb(int idPerson, List<MovieGen> movieGens) {
 		List<String> itemType= new ArrayList<String>();
 		for(MovieGen m: movieGens) {
 			itemType.add(m.toString());
@@ -56,7 +56,7 @@ public class RecombeeDB {
 	}
 
 
-	public static void addUserFdb(int idPerson, List<FoodType> foodTypes) {
+	public  void addUserFdb(int idPerson, List<FoodType> foodTypes) {
 		List<String> itemType= new ArrayList<String>();
 		for(FoodType m: foodTypes) {
 			itemType.add(m.toString());
@@ -66,7 +66,7 @@ public class RecombeeDB {
 	}
 
 
-	public static List<Movie> getMRec(int idPerson, int quantity) {
+	public  List<Movie> getMRec(int idPerson, int quantity) {
 		List<Movie> movies= new ArrayList<>();
 		List<String> recmded=serviceInt.getRec4User(mRecombeeId, Integer.toString(idPerson), quantity);
 		for(String rec: recmded) {
@@ -77,7 +77,7 @@ public class RecombeeDB {
 	}
 
 
-	public static List<Food> getFRec(int idPerson, int quantity) {
+	public  List<Food> getFRec(int idPerson, int quantity) {
 		List<Food> foods= new ArrayList<>();
 		List<String> recmded=serviceInt.getRec4User(fRecombeeId, Integer.toString(idPerson), quantity);
 		for(String rec: recmded) {
@@ -88,17 +88,17 @@ public class RecombeeDB {
 	}
 
 
-	public static int modifyRatingM(int idPerson, int itemId, double rating,
+	public  int modifyRatingM(int idPerson, int itemId, double rating,
 			Date timestemp) {
 		return serviceInt.modifyRating(mRecombeeId, Integer.toString(idPerson), Integer.toString(itemId), rating, DateToXML.GregorianCalendar(timestemp));
 	}
-	public static int modifyRatingF(int idPerson, int itemId, double rating,
+	public  int modifyRatingF(int idPerson, int itemId, double rating,
 			Date timestemp) {
 		return serviceInt.modifyRating(mRecombeeId, Integer.toString(idPerson), Integer.toString(itemId), rating, DateToXML.GregorianCalendar(timestemp));
 	}
 
 
-	public static RecombeeClient setRecombeeClient(String string, String string2) {
+	public  RecombeeClient setRecombeeClient(String string, String string2) {
 		return serviceInt.setRecombeeClient(string,string2);
 	}
 
