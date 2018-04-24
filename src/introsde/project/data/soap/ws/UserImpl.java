@@ -23,14 +23,14 @@ public class UserImpl implements UserInterface{
 	//RecombeeDB recombeeDB;
 	
 	public UserImpl() {
-		//RecombeeDB= new RecombeeDB();
+		RecombeeDB.resetDB();
 	}
 
 	@Override
 	public Person addNewPerson(Person person) {
 		Person p=Person.savePerson(person);
-		//RecombeeDB.addUserMdb(p.getIdPerson(),p.getMovieGens());
-		//RecombeeDB.addUserFdb(p.getIdPerson(),p.getFoodTypes());
+		RecombeeDB.addUserMdb(p.getIdPerson(),p.getMovieGens());
+		RecombeeDB.addUserFdb(p.getIdPerson(),p.getFoodTypes());
 		return p;
 	}
 
@@ -391,6 +391,12 @@ MessageContext mctx = wsctx.getMessageContext();
 	    }else{
         	return -1;
         }
+	}
+
+	@Override
+	public Person updatePerson(Person person) {
+		return Person.updatePerson(person);
+		//return null;
 	}
 
 }

@@ -196,6 +196,21 @@ public interface RecombeeInterface {
 
     /**
      * 
+     * @param clientId
+     * @return
+     *     returns int
+     */
+    @WebMethod
+    @WebResult(name = "int", targetNamespace = "")
+    @RequestWrapper(localName = "resetBD", targetNamespace = "http://soap.recombee.adopter.project.introsde/", className = "introsde.project.adopter.recombee.soap.ResetBD")
+    @ResponseWrapper(localName = "resetBDResponse", targetNamespace = "http://soap.recombee.adopter.project.introsde/", className = "introsde.project.adopter.recombee.soap.ResetBDResponse")
+    @Action(input = "http://soap.recombee.adopter.project.introsde/RecombeeInterface/resetBDRequest", output = "http://soap.recombee.adopter.project.introsde/RecombeeInterface/resetBDResponse")
+    public int resetBD(
+        @WebParam(name = "clientId", targetNamespace = "")
+        RecombeeClient clientId);
+
+    /**
+     * 
      * @param itemId
      * @param clientId
      * @return

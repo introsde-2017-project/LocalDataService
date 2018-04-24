@@ -28,6 +28,7 @@ public class ObjectFactory {
     private final static QName _ModifyRatingResponse_QNAME = new QName("http://soap.recombee.adopter.project.introsde/", "modifyRatingResponse");
     private final static QName _AddRating_QNAME = new QName("http://soap.recombee.adopter.project.introsde/", "addRating");
     private final static QName _AdditemResponse_QNAME = new QName("http://soap.recombee.adopter.project.introsde/", "additemResponse");
+    private final static QName _ResetBD_QNAME = new QName("http://soap.recombee.adopter.project.introsde/", "resetBD");
     private final static QName _GetUserRating_QNAME = new QName("http://soap.recombee.adopter.project.introsde/", "getUserRating");
     private final static QName _GetitemResponse_QNAME = new QName("http://soap.recombee.adopter.project.introsde/", "getitemResponse");
     private final static QName _SetRecombeeClient_QNAME = new QName("http://soap.recombee.adopter.project.introsde/", "setRecombeeClient");
@@ -38,6 +39,7 @@ public class ObjectFactory {
     private final static QName _GetUserRatingResponse_QNAME = new QName("http://soap.recombee.adopter.project.introsde/", "getUserRatingResponse");
     private final static QName _GetUserResponse_QNAME = new QName("http://soap.recombee.adopter.project.introsde/", "getUserResponse");
     private final static QName _ModifyRating_QNAME = new QName("http://soap.recombee.adopter.project.introsde/", "modifyRating");
+    private final static QName _ResetBDResponse_QNAME = new QName("http://soap.recombee.adopter.project.introsde/", "resetBDResponse");
     private final static QName _AddUser_QNAME = new QName("http://soap.recombee.adopter.project.introsde/", "addUser");
     private final static QName _Getitem_QNAME = new QName("http://soap.recombee.adopter.project.introsde/", "getitem");
     private final static QName _Additem_QNAME = new QName("http://soap.recombee.adopter.project.introsde/", "additem");
@@ -75,6 +77,14 @@ public class ObjectFactory {
      */
     public ModifyRating createModifyRating() {
         return new ModifyRating();
+    }
+
+    /**
+     * Create an instance of {@link ResetBDResponse }
+     * 
+     */
+    public ResetBDResponse createResetBDResponse() {
+        return new ResetBDResponse();
     }
 
     /**
@@ -163,6 +173,14 @@ public class ObjectFactory {
      */
     public AdditemResponse createAdditemResponse() {
         return new AdditemResponse();
+    }
+
+    /**
+     * Create an instance of {@link ResetBD }
+     * 
+     */
+    public ResetBD createResetBD() {
+        return new ResetBD();
     }
 
     /**
@@ -290,6 +308,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ResetBD }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://soap.recombee.adopter.project.introsde/", name = "resetBD")
+    public JAXBElement<ResetBD> createResetBD(ResetBD value) {
+        return new JAXBElement<ResetBD>(_ResetBD_QNAME, ResetBD.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetUserRating }{@code >}}
      * 
      */
@@ -377,6 +404,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://soap.recombee.adopter.project.introsde/", name = "modifyRating")
     public JAXBElement<ModifyRating> createModifyRating(ModifyRating value) {
         return new JAXBElement<ModifyRating>(_ModifyRating_QNAME, ModifyRating.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ResetBDResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://soap.recombee.adopter.project.introsde/", name = "resetBDResponse")
+    public JAXBElement<ResetBDResponse> createResetBDResponse(ResetBDResponse value) {
+        return new JAXBElement<ResetBDResponse>(_ResetBDResponse_QNAME, ResetBDResponse.class, null, value);
     }
 
     /**

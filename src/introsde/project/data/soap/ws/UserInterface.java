@@ -31,6 +31,11 @@ public interface UserInterface {
 	public Person getPerson(
 			@WebParam(name="personId") int personId
 			);
+	@WebMethod(operationName="updatePerson")
+    @WebResult(name="Person") 
+	public Person updatePerson(
+			@WebParam(name="person") Person person
+			);
 	@WebMethod(operationName="getMovieRec")
     @WebResult(name="movielist") 
 	public List<Movie> getMovieRec(
