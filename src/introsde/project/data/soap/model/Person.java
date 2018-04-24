@@ -54,7 +54,10 @@ public class Person implements Serializable{
 	 @ElementCollection
 	 private List<MovieGen> movieGens;
 	 
-	 public Person() {}
+	 public Person() {
+		 foodTypes= new LinkedList<FoodType>();
+		 movieGens= new LinkedList<MovieGen>();
+	 }
 
 	 public Person(String lastName,
 			 String firstName, 
