@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<endpoints xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime" version="2.0">
+    <endpoint name="UserImpl"
+        implementation="introsde.project.data.soap.ws.UserImpl"
+        url-pattern="/ws/database" />
+</endpoints>
