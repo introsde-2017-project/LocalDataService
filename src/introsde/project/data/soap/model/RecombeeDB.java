@@ -12,16 +12,17 @@ import introsde.project.adopter.recombee.soap.RecombeeInterface;
 
 
 public class RecombeeDB {
-	private static RecombeeImplService serviceImp = new RecombeeImplService();
-	private static RecombeeInterface serviceInt=  serviceImp.getRecombeeImplPort();
-	private static RecombeeClient mRecombeeId= RecombeeDB.setRecombeeClient("introsde-movie","vFHY4J18WnyMsM3kA550soX5HIGiID0ctFiBvFAHcbdu13EY9G7Gh1jr60cUN7Pg");;
-	private static RecombeeClient fRecombeeId = RecombeeDB.setRecombeeClient("introsde-food", "rntjKxWkHt56geGH7uF25kVSt4dQhAHx9jPS3v1yId7zZwEQUMlxvpFxxGLn3OMc");;
+	private static RecombeeImplService serviceImp;// = new RecombeeImplService();
+	private static RecombeeInterface serviceInt;//=  serviceImp.getRecombeeImplPort();
+	private static RecombeeClient mRecombeeId;//= RecombeeDB.setRecombeeClient("introsde-movie","vFHY4J18WnyMsM3kA550soX5HIGiID0ctFiBvFAHcbdu13EY9G7Gh1jr60cUN7Pg");;
+	private static RecombeeClient fRecombeeId;// = RecombeeDB.setRecombeeClient("introsde-food", "rntjKxWkHt56geGH7uF25kVSt4dQhAHx9jPS3v1yId7zZwEQUMlxvpFxxGLn3OMc");;
 	
 	public RecombeeDB(){
-		//serviceImp =  new RecombeeImplService();
-		//serviceInt = serviceImp.getRecombeeImplPort();
-		//mRecombeeId= setRecombeeClient("introsde-movie","vFHY4J18WnyMsM3kA550soX5HIGiID0ctFiBvFAHcbdu13EY9G7Gh1jr60cUN7Pg");
-		//fRecombeeId= setRecombeeClient("introsde-food", "rntjKxWkHt56geGH7uF25kVSt4dQhAHx9jPS3v1yId7zZwEQUMlxvpFxxGLn3OMc");
+		serviceImp =  new RecombeeImplService();
+		serviceInt = serviceImp.getRecombeeImplPort();
+		mRecombeeId= setRecombeeClient("introsde-movie","vFHY4J18WnyMsM3kA550soX5HIGiID0ctFiBvFAHcbdu13EY9G7Gh1jr60cUN7Pg");
+		fRecombeeId= setRecombeeClient("introsde-food", "rntjKxWkHt56geGH7uF25kVSt4dQhAHx9jPS3v1yId7zZwEQUMlxvpFxxGLn3OMc");
+		//resetDB();
 	}
 	
 	

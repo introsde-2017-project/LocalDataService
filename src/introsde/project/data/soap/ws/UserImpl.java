@@ -23,7 +23,8 @@ public class UserImpl implements UserInterface{
 	//RecombeeDB recombeeDB;
 	
 	public UserImpl() {
-		RecombeeDB.resetDB();
+		new RecombeeDB();
+		//RecombeeDB.resetDB();
 	}
 
 	@Override
