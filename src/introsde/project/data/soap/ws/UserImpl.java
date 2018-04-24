@@ -20,17 +20,17 @@ public class UserImpl implements UserInterface{
 	@Resource
     WebServiceContext wsctx;
 	
-	RecombeeDB recombeeDB;
+	//RecombeeDB recombeeDB;
 	
 	public UserImpl() {
-		recombeeDB= new RecombeeDB();
+		//RecombeeDB= new RecombeeDB();
 	}
 
 	@Override
 	public Person addNewPerson(Person person) {
 		Person p=Person.savePerson(person);
-		recombeeDB.addUserMdb(p.getIdPerson(),p.getMovieGens());
-		recombeeDB.addUserFdb(p.getIdPerson(),p.getFoodTypes());
+		RecombeeDB.addUserMdb(p.getIdPerson(),p.getMovieGens());
+		RecombeeDB.addUserFdb(p.getIdPerson(),p.getFoodTypes());
 		return p;
 	}
 
@@ -98,7 +98,7 @@ public class UserImpl implements UserInterface{
 	    if (p!=null 
 	    		&& p.getPassword().equals(password)
 	    		&& Movie.getMovieById(movieId)!=null){
-	    	return recombeeDB.addRatingM(movieId,p.getIdPerson(),rating,timestemp);
+	    	return RecombeeDB.addRatingM(movieId,p.getIdPerson(),rating,timestemp);
 	    }else{
         	return -1;
         }
@@ -130,7 +130,7 @@ public class UserImpl implements UserInterface{
 	    if (Person.getPersonByUserName(username)!=null
 	    		&& Person.getPersonByUserName(username).getPassword().equals(password)
 	    		&& Movie.getMovieById(movieId)!=null){
-	    	return recombeeDB.getItemRatingsF(movieId);
+	    	return RecombeeDB.getItemRatingsF(movieId);
 	    }else{
         	return null;
         }
@@ -169,7 +169,7 @@ public class UserImpl implements UserInterface{
 	    if (p!=null 
 	    		&& p.getPassword().equals(password)
 	    		&& Food.getFoodById(foodId)!=null){
-	    	return recombeeDB.addRatingF(foodId,p.getIdPerson(),rating,timestemp);
+	    	return RecombeeDB.addRatingF(foodId,p.getIdPerson(),rating,timestemp);
 	    }else{
         	return -1;
         }
@@ -201,7 +201,7 @@ public class UserImpl implements UserInterface{
 	    if (Person.getPersonByUserName(username)!=null
 	    		&& Person.getPersonByUserName(username).getPassword().equals(password)
 	    		&& Food.getFoodById(foodId)!=null){
-	    	return recombeeDB.getItemRatingsM(foodId);
+	    	return RecombeeDB.getItemRatingsM(foodId);
 	    }else{
         	return null;
         }
@@ -294,7 +294,7 @@ MessageContext mctx = wsctx.getMessageContext();
 	    //Should validate username and password with database
 	    if (Person.getPersonByUserName(username)!=null
 	    		&& Person.getPersonByUserName(username).getPassword().equals(password)){
-	    	return recombeeDB.getMRec(Person.getPersonByUserName(username).getIdPerson(),number);
+	    	return RecombeeDB.getMRec(Person.getPersonByUserName(username).getIdPerson(),number);
 	    }else{
         	return null;
         }
@@ -325,7 +325,7 @@ MessageContext mctx = wsctx.getMessageContext();
 	    //Should validate username and password with database
 	    if (Person.getPersonByUserName(username)!=null
 	    		&& Person.getPersonByUserName(username).getPassword().equals(password)){
-	    	return recombeeDB.getFRec(Person.getPersonByUserName(username).getIdPerson(),number);
+	    	return RecombeeDB.getFRec(Person.getPersonByUserName(username).getIdPerson(),number);
 	    }else{
         	return null;
         }
@@ -356,7 +356,7 @@ MessageContext mctx = wsctx.getMessageContext();
 	    //Should validate username and password with database
 	    if (Person.getPersonByUserName(username)!=null
 	    		&& Person.getPersonByUserName(username).getPassword().equals(password)){
-	    	return recombeeDB.modifyRatingM(Person.getPersonByUserName(username).getIdPerson(),movieId,rating,timestemp);
+	    	return RecombeeDB.modifyRatingM(Person.getPersonByUserName(username).getIdPerson(),movieId,rating,timestemp);
 	    }else{
         	return -1;
         }
@@ -387,7 +387,7 @@ MessageContext mctx = wsctx.getMessageContext();
 	    //Should validate username and password with database
 	    if (Person.getPersonByUserName(username)!=null
 	    		&& Person.getPersonByUserName(username).getPassword().equals(password)){
-	    	return recombeeDB.modifyRatingF(Person.getPersonByUserName(username).getIdPerson(),foodId,rating,timestemp);
+	    	return RecombeeDB.modifyRatingF(Person.getPersonByUserName(username).getIdPerson(),foodId,rating,timestemp);
 	    }else{
         	return -1;
         }

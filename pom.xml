@@ -47,7 +47,7 @@
 	<!--ERROR SOLUTION Using platform encoding (UTF-8 actually) to copy filtered resources, -->
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+<!--     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding> -->
 </properties>
 
 	<build>
@@ -55,7 +55,7 @@
 		<resources>
 			<resource>
 				<directory>src</directory>
-				<filtering>true</filtering>
+<!-- 				<filtering>true</filtering> -->
 			</resource>
 		</resources>
 		<plugins>
