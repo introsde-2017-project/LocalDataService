@@ -18,7 +18,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="clientId" type="{http://soap.recombee.adopter.project.introsde/}recombeeClient" minOccurs="0"/>
+ *         &lt;element name="dbName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="userId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="itemId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="rating" type="{http://www.w3.org/2001/XMLSchema}double"/>
@@ -33,7 +33,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "addRating", propOrder = {
-    "clientId",
+    "dbName",
     "userId",
     "itemId",
     "rating",
@@ -41,7 +41,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
 })
 public class AddRating {
 
-    protected RecombeeClient clientId;
+    protected String dbName;
     protected String userId;
     protected String itemId;
     protected double rating;
@@ -49,27 +49,27 @@ public class AddRating {
     protected XMLGregorianCalendar time;
 
     /**
-     * Gets the value of the clientId property.
+     * Gets the value of the dbName property.
      * 
      * @return
      *     possible object is
-     *     {@link RecombeeClient }
+     *     {@link String }
      *     
      */
-    public RecombeeClient getClientId() {
-        return clientId;
+    public String getDbName() {
+        return dbName;
     }
 
     /**
-     * Sets the value of the clientId property.
+     * Sets the value of the dbName property.
      * 
      * @param value
      *     allowed object is
-     *     {@link RecombeeClient }
+     *     {@link String }
      *     
      */
-    public void setClientId(RecombeeClient value) {
-        this.clientId = value;
+    public void setDbName(String value) {
+        this.dbName = value;
     }
 
     /**

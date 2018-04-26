@@ -8,6 +8,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name="movie_Gen")
 public enum MovieGen implements Serializable {
+	
 	Drama("Drama"),
 	Comedy("Comedy"),
 	Romance("Romance"),
@@ -18,6 +19,7 @@ public enum MovieGen implements Serializable {
 	Animation("Animation"),
 	Horror("Horror");
 	
+	private static final long serialVersionUID = 1L;
 	private String name;
 //	@ManyToOne
 //	@JoinColumn(name="personId",referencedColumnName="personId")

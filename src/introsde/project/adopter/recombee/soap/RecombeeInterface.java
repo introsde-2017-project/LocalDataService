@@ -28,7 +28,7 @@ public interface RecombeeInterface {
 
     /**
      * 
-     * @param clientId
+     * @param dbName
      * @param userId
      * @return
      *     returns introsde.project.adopter.recombee.soap.User
@@ -39,15 +39,15 @@ public interface RecombeeInterface {
     @ResponseWrapper(localName = "getUserResponse", targetNamespace = "http://soap.recombee.adopter.project.introsde/", className = "introsde.project.adopter.recombee.soap.GetUserResponse")
     @Action(input = "http://soap.recombee.adopter.project.introsde/RecombeeInterface/getUserRequest", output = "http://soap.recombee.adopter.project.introsde/RecombeeInterface/getUserResponse")
     public User getUser(
-        @WebParam(name = "clientId", targetNamespace = "")
-        RecombeeClient clientId,
+        @WebParam(name = "dbName", targetNamespace = "")
+        String dbName,
         @WebParam(name = "userId", targetNamespace = "")
         String userId);
 
     /**
      * 
      * @param itemType
-     * @param clientId
+     * @param dbName
      * @param userId
      * @return
      *     returns introsde.project.adopter.recombee.soap.Item
@@ -58,8 +58,8 @@ public interface RecombeeInterface {
     @ResponseWrapper(localName = "additemResponse", targetNamespace = "http://soap.recombee.adopter.project.introsde/", className = "introsde.project.adopter.recombee.soap.AdditemResponse")
     @Action(input = "http://soap.recombee.adopter.project.introsde/RecombeeInterface/additemRequest", output = "http://soap.recombee.adopter.project.introsde/RecombeeInterface/additemResponse")
     public Item additem(
-        @WebParam(name = "clientId", targetNamespace = "")
-        RecombeeClient clientId,
+        @WebParam(name = "dbName", targetNamespace = "")
+        String dbName,
         @WebParam(name = "userId", targetNamespace = "")
         String userId,
         @WebParam(name = "itemType", targetNamespace = "")
@@ -68,7 +68,7 @@ public interface RecombeeInterface {
     /**
      * 
      * @param itemId
-     * @param clientId
+     * @param dbName
      * @param rating
      * @param time
      * @param userId
@@ -81,8 +81,8 @@ public interface RecombeeInterface {
     @ResponseWrapper(localName = "addRatingResponse", targetNamespace = "http://soap.recombee.adopter.project.introsde/", className = "introsde.project.adopter.recombee.soap.AddRatingResponse")
     @Action(input = "http://soap.recombee.adopter.project.introsde/RecombeeInterface/addRatingRequest", output = "http://soap.recombee.adopter.project.introsde/RecombeeInterface/addRatingResponse")
     public int addRating(
-        @WebParam(name = "clientId", targetNamespace = "")
-        RecombeeClient clientId,
+        @WebParam(name = "dbName", targetNamespace = "")
+        String dbName,
         @WebParam(name = "userId", targetNamespace = "")
         String userId,
         @WebParam(name = "itemId", targetNamespace = "")
@@ -95,7 +95,7 @@ public interface RecombeeInterface {
     /**
      * 
      * @param itemId
-     * @param clientId
+     * @param dbName
      * @param rating
      * @param time
      * @param userId
@@ -108,8 +108,8 @@ public interface RecombeeInterface {
     @ResponseWrapper(localName = "modifyRatingResponse", targetNamespace = "http://soap.recombee.adopter.project.introsde/", className = "introsde.project.adopter.recombee.soap.ModifyRatingResponse")
     @Action(input = "http://soap.recombee.adopter.project.introsde/RecombeeInterface/modifyRatingRequest", output = "http://soap.recombee.adopter.project.introsde/RecombeeInterface/modifyRatingResponse")
     public int modifyRating(
-        @WebParam(name = "clientId", targetNamespace = "")
-        RecombeeClient clientId,
+        @WebParam(name = "dbName", targetNamespace = "")
+        String dbName,
         @WebParam(name = "userId", targetNamespace = "")
         String userId,
         @WebParam(name = "itemId", targetNamespace = "")
@@ -122,7 +122,7 @@ public interface RecombeeInterface {
     /**
      * 
      * @param itemId
-     * @param clientId
+     * @param dbName
      * @return
      *     returns java.util.List<introsde.project.adopter.recombee.soap.Evaluation>
      */
@@ -132,14 +132,14 @@ public interface RecombeeInterface {
     @ResponseWrapper(localName = "getItemRatingResponse", targetNamespace = "http://soap.recombee.adopter.project.introsde/", className = "introsde.project.adopter.recombee.soap.GetItemRatingResponse")
     @Action(input = "http://soap.recombee.adopter.project.introsde/RecombeeInterface/getItemRatingRequest", output = "http://soap.recombee.adopter.project.introsde/RecombeeInterface/getItemRatingResponse")
     public List<Evaluation> getItemRating(
-        @WebParam(name = "clientId", targetNamespace = "")
-        RecombeeClient clientId,
+        @WebParam(name = "dbName", targetNamespace = "")
+        String dbName,
         @WebParam(name = "itemId", targetNamespace = "")
         String itemId);
 
     /**
      * 
-     * @param clientId
+     * @param dbName
      * @param userId
      * @return
      *     returns java.util.List<introsde.project.adopter.recombee.soap.Evaluation>
@@ -150,15 +150,15 @@ public interface RecombeeInterface {
     @ResponseWrapper(localName = "getUserRatingResponse", targetNamespace = "http://soap.recombee.adopter.project.introsde/", className = "introsde.project.adopter.recombee.soap.GetUserRatingResponse")
     @Action(input = "http://soap.recombee.adopter.project.introsde/RecombeeInterface/getUserRatingRequest", output = "http://soap.recombee.adopter.project.introsde/RecombeeInterface/getUserRatingResponse")
     public List<Evaluation> getUserRating(
-        @WebParam(name = "clientId", targetNamespace = "")
-        RecombeeClient clientId,
+        @WebParam(name = "dbName", targetNamespace = "")
+        String dbName,
         @WebParam(name = "userId", targetNamespace = "")
         String userId);
 
     /**
      * 
-     * @param clientId
      * @param quantity
+     * @param dbName
      * @param userId
      * @return
      *     returns java.util.List<java.lang.String>
@@ -169,8 +169,8 @@ public interface RecombeeInterface {
     @ResponseWrapper(localName = "getRec4UserResponse", targetNamespace = "http://soap.recombee.adopter.project.introsde/", className = "introsde.project.adopter.recombee.soap.GetRec4UserResponse")
     @Action(input = "http://soap.recombee.adopter.project.introsde/RecombeeInterface/getRec4UserRequest", output = "http://soap.recombee.adopter.project.introsde/RecombeeInterface/getRec4UserResponse")
     public List<String> getRec4User(
-        @WebParam(name = "clientId", targetNamespace = "")
-        RecombeeClient clientId,
+        @WebParam(name = "dbName", targetNamespace = "")
+        String dbName,
         @WebParam(name = "userId", targetNamespace = "")
         String userId,
         @WebParam(name = "quantity", targetNamespace = "")
@@ -178,25 +178,7 @@ public interface RecombeeInterface {
 
     /**
      * 
-     * @param password
-     * @param clientId
-     * @return
-     *     returns introsde.project.adopter.recombee.soap.RecombeeClient
-     */
-    @WebMethod
-    @WebResult(name = "clientId", targetNamespace = "")
-    @RequestWrapper(localName = "setRecombeeClient", targetNamespace = "http://soap.recombee.adopter.project.introsde/", className = "introsde.project.adopter.recombee.soap.SetRecombeeClient")
-    @ResponseWrapper(localName = "setRecombeeClientResponse", targetNamespace = "http://soap.recombee.adopter.project.introsde/", className = "introsde.project.adopter.recombee.soap.SetRecombeeClientResponse")
-    @Action(input = "http://soap.recombee.adopter.project.introsde/RecombeeInterface/setRecombeeClientRequest", output = "http://soap.recombee.adopter.project.introsde/RecombeeInterface/setRecombeeClientResponse")
-    public RecombeeClient setRecombeeClient(
-        @WebParam(name = "clientId", targetNamespace = "")
-        String clientId,
-        @WebParam(name = "password", targetNamespace = "")
-        String password);
-
-    /**
-     * 
-     * @param clientId
+     * @param dbName
      * @return
      *     returns int
      */
@@ -206,13 +188,13 @@ public interface RecombeeInterface {
     @ResponseWrapper(localName = "resetBDResponse", targetNamespace = "http://soap.recombee.adopter.project.introsde/", className = "introsde.project.adopter.recombee.soap.ResetBDResponse")
     @Action(input = "http://soap.recombee.adopter.project.introsde/RecombeeInterface/resetBDRequest", output = "http://soap.recombee.adopter.project.introsde/RecombeeInterface/resetBDResponse")
     public int resetBD(
-        @WebParam(name = "clientId", targetNamespace = "")
-        RecombeeClient clientId);
+        @WebParam(name = "dbName", targetNamespace = "")
+        String dbName);
 
     /**
      * 
      * @param itemId
-     * @param clientId
+     * @param dbName
      * @return
      *     returns introsde.project.adopter.recombee.soap.Item
      */
@@ -222,27 +204,27 @@ public interface RecombeeInterface {
     @ResponseWrapper(localName = "getitemResponse", targetNamespace = "http://soap.recombee.adopter.project.introsde/", className = "introsde.project.adopter.recombee.soap.GetitemResponse")
     @Action(input = "http://soap.recombee.adopter.project.introsde/RecombeeInterface/getitemRequest", output = "http://soap.recombee.adopter.project.introsde/RecombeeInterface/getitemResponse")
     public Item getitem(
-        @WebParam(name = "clientId", targetNamespace = "")
-        RecombeeClient clientId,
+        @WebParam(name = "dbName", targetNamespace = "")
+        String dbName,
         @WebParam(name = "itemId", targetNamespace = "")
         String itemId);
 
     /**
      * 
-     * @param clientId
      * @param preitem
+     * @param dbName
      * @param userId
      * @return
-     *     returns introsde.project.adopter.recombee.soap.User
+     *     returns int
      */
     @WebMethod
-    @WebResult(name = "user", targetNamespace = "")
+    @WebResult(name = "int", targetNamespace = "")
     @RequestWrapper(localName = "addUser", targetNamespace = "http://soap.recombee.adopter.project.introsde/", className = "introsde.project.adopter.recombee.soap.AddUser")
     @ResponseWrapper(localName = "addUserResponse", targetNamespace = "http://soap.recombee.adopter.project.introsde/", className = "introsde.project.adopter.recombee.soap.AddUserResponse")
     @Action(input = "http://soap.recombee.adopter.project.introsde/RecombeeInterface/addUserRequest", output = "http://soap.recombee.adopter.project.introsde/RecombeeInterface/addUserResponse")
-    public User addUser(
-        @WebParam(name = "clientId", targetNamespace = "")
-        RecombeeClient clientId,
+    public int addUser(
+        @WebParam(name = "dbName", targetNamespace = "")
+        String dbName,
         @WebParam(name = "userId", targetNamespace = "")
         String userId,
         @WebParam(name = "preitem", targetNamespace = "")

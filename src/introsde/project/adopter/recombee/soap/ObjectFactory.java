@@ -31,11 +31,9 @@ public class ObjectFactory {
     private final static QName _ResetBD_QNAME = new QName("http://soap.recombee.adopter.project.introsde/", "resetBD");
     private final static QName _GetUserRating_QNAME = new QName("http://soap.recombee.adopter.project.introsde/", "getUserRating");
     private final static QName _GetitemResponse_QNAME = new QName("http://soap.recombee.adopter.project.introsde/", "getitemResponse");
-    private final static QName _SetRecombeeClient_QNAME = new QName("http://soap.recombee.adopter.project.introsde/", "setRecombeeClient");
     private final static QName _GetRec4UserResponse_QNAME = new QName("http://soap.recombee.adopter.project.introsde/", "getRec4UserResponse");
     private final static QName _AddUserResponse_QNAME = new QName("http://soap.recombee.adopter.project.introsde/", "addUserResponse");
     private final static QName _GetItemRating_QNAME = new QName("http://soap.recombee.adopter.project.introsde/", "getItemRating");
-    private final static QName _SetRecombeeClientResponse_QNAME = new QName("http://soap.recombee.adopter.project.introsde/", "setRecombeeClientResponse");
     private final static QName _GetUserRatingResponse_QNAME = new QName("http://soap.recombee.adopter.project.introsde/", "getUserRatingResponse");
     private final static QName _GetUserResponse_QNAME = new QName("http://soap.recombee.adopter.project.introsde/", "getUserResponse");
     private final static QName _ModifyRating_QNAME = new QName("http://soap.recombee.adopter.project.introsde/", "modifyRating");
@@ -200,14 +198,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link SetRecombeeClient }
-     * 
-     */
-    public SetRecombeeClient createSetRecombeeClient() {
-        return new SetRecombeeClient();
-    }
-
-    /**
      * Create an instance of {@link GetRec4UserResponse }
      * 
      */
@@ -232,27 +222,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link SetRecombeeClientResponse }
-     * 
-     */
-    public SetRecombeeClientResponse createSetRecombeeClientResponse() {
-        return new SetRecombeeClientResponse();
-    }
-
-    /**
      * Create an instance of {@link RecombeeBinding }
      * 
      */
     public RecombeeBinding createRecombeeBinding() {
         return new RecombeeBinding();
-    }
-
-    /**
-     * Create an instance of {@link RecombeeClient }
-     * 
-     */
-    public RecombeeClient createRecombeeClient() {
-        return new RecombeeClient();
     }
 
     /**
@@ -335,15 +309,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SetRecombeeClient }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://soap.recombee.adopter.project.introsde/", name = "setRecombeeClient")
-    public JAXBElement<SetRecombeeClient> createSetRecombeeClient(SetRecombeeClient value) {
-        return new JAXBElement<SetRecombeeClient>(_SetRecombeeClient_QNAME, SetRecombeeClient.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetRec4UserResponse }{@code >}}
      * 
      */
@@ -368,15 +333,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://soap.recombee.adopter.project.introsde/", name = "getItemRating")
     public JAXBElement<GetItemRating> createGetItemRating(GetItemRating value) {
         return new JAXBElement<GetItemRating>(_GetItemRating_QNAME, GetItemRating.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SetRecombeeClientResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://soap.recombee.adopter.project.introsde/", name = "setRecombeeClientResponse")
-    public JAXBElement<SetRecombeeClientResponse> createSetRecombeeClientResponse(SetRecombeeClientResponse value) {
-        return new JAXBElement<SetRecombeeClientResponse>(_SetRecombeeClientResponse_QNAME, SetRecombeeClientResponse.class, null, value);
     }
 
     /**

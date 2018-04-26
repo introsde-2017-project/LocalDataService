@@ -16,7 +16,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="clientId" type="{http://soap.recombee.adopter.project.introsde/}recombeeClient" minOccurs="0"/>
+ *         &lt;element name="dbName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -27,34 +27,34 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "resetBD", propOrder = {
-    "clientId"
+    "dbName"
 })
 public class ResetBD {
 
-    protected RecombeeClient clientId;
+    protected String dbName;
 
     /**
-     * Gets the value of the clientId property.
+     * Gets the value of the dbName property.
      * 
      * @return
      *     possible object is
-     *     {@link RecombeeClient }
+     *     {@link String }
      *     
      */
-    public RecombeeClient getClientId() {
-        return clientId;
+    public String getDbName() {
+        return dbName;
     }
 
     /**
-     * Sets the value of the clientId property.
+     * Sets the value of the dbName property.
      * 
      * @param value
      *     allowed object is
-     *     {@link RecombeeClient }
+     *     {@link String }
      *     
      */
-    public void setClientId(RecombeeClient value) {
-        this.clientId = value;
+    public void setDbName(String value) {
+        this.dbName = value;
     }
 
 }

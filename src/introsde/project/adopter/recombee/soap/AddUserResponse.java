@@ -3,6 +3,7 @@ package introsde.project.adopter.recombee.soap;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -16,7 +17,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="user" type="{http://soap.recombee.adopter.project.introsde/}user" minOccurs="0"/>
+ *         &lt;element name="int" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -27,34 +28,27 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "addUserResponse", propOrder = {
-    "user"
+    "_int"
 })
 public class AddUserResponse {
 
-    protected User user;
+    @XmlElement(name = "int")
+    protected int _int;
 
     /**
-     * Gets the value of the user property.
+     * Gets the value of the int property.
      * 
-     * @return
-     *     possible object is
-     *     {@link User }
-     *     
      */
-    public User getUser() {
-        return user;
+    public int getInt() {
+        return _int;
     }
 
     /**
-     * Sets the value of the user property.
+     * Sets the value of the int property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link User }
-     *     
      */
-    public void setUser(User value) {
-        this.user = value;
+    public void setInt(int value) {
+        this._int = value;
     }
 
 }

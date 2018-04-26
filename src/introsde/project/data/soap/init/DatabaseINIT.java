@@ -1,21 +1,27 @@
 package introsde.project.data.soap.init;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 
-import introsde.project.data.soap.model.Food;
+import introsde.project.adopter.recombee.soap.RecombeeImplService;
+import introsde.project.adopter.recombee.soap.RecombeeInterface;
 import introsde.project.data.soap.model.FoodType;
-import introsde.project.data.soap.model.Movie;
 import introsde.project.data.soap.model.MovieGen;
 import introsde.project.data.soap.model.Person;
+import introsde.project.data.soap.model.RecombeeDB;
 
 public class DatabaseINIT {
+	private static RecombeeImplService serviceImp = new RecombeeImplService();
+	private static RecombeeInterface serviceInt=  serviceImp.getRecombeeImplPort();
+	private static String foodRecombeeDB= "foodDB";
+	private static String movieRecombeeDB= "movieDB";
+	
 	public static void initializeDB(){
 		
-		//Activity ar= setActivity("Meeting","Project meeting","Torino","2018-01-15T09:00:00.0",ActivityType.WorkMeeting,8);
-		//Food f= new Food("name",FoodType.Chinese,"description");
-		//Food.saveFood(f);
-		//Movie m= new Movie("movie1",MovieGen.Action);
-		//Movie.saveMovie(m);
+		RecombeeDB.resetDB();
+		
+		
 		Person p= new Person("george","michael", "username","password","1980-06-20", new LinkedList<FoodType>() {{
 			add(FoodType.Chinese);
 			add(FoodType.Indian);
@@ -25,8 +31,27 @@ public class DatabaseINIT {
 			add(MovieGen.Adventure);
 		}}
 		);
-		p=Person.savePerson(p);
-		System.out.println(p.getIdPerson());
+		Person q=Person.savePerson(p);
+		System.out.println(q.getIdPerson());
+		
+		//adding in Food Recombee DB
+		List<String> l= new ArrayList<String>();
+		for(FoodType f: p.getFoodTypes()) 
+			l.add(f.name());
+		serviceInt.addUser(foodRecombeeDB, Integer.toString(p.getIdPerson()), l);
+		
+		//adding to movie Recombee DB 
+		l= new ArrayList<String>();
+		for(MovieGen f: p.getMovieGens()) 
+			l.add(f.name());
+		serviceInt.addUser(movieRecombeeDB, Integer.toString(p.getIdPerson()), l);
+		
+		
+		
+		
+		
+		//RecombeeDB.addUserMdb(p.getIdPerson(),p.getMovieGens());
+		//RecombeeDB.addUserFdb(p.getIdPerson(),p.getFoodTypes());
 		
 //		//ar= setActivity("Fundraising","Fundraising event","Trento","2018-01-16T09:00:00.0",ActivityType.Culture,6);
 //		p= setPerson( "1992-03-19", "Fillipo","Max","username1","password1");
