@@ -29,7 +29,7 @@ public interface UserInterface {
 	@WebMethod(operationName="getPerson")
     @WebResult(name="Person") 
 	public Person getPerson(
-			@WebParam(name="personId") int personId
+			@WebParam(name="username") String username
 			);
 	@WebMethod(operationName="updatePerson")
     @WebResult(name="Person") 

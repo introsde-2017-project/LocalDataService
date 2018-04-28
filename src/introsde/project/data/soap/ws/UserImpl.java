@@ -29,8 +29,8 @@ public class UserImpl implements UserInterface{
 	}
 
 	@Override
-	public Person getPerson(int personId) {
-		return Person.getPersonById(personId);
+	public Person getPerson(String username) {
+		return Person.getPersonByUserName(username);
 //		MessageContext mctx = wsctx.getMessageContext();
 //		
 //		//get detail from request headers
