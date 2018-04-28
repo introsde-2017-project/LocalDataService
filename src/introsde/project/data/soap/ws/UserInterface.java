@@ -39,11 +39,13 @@ public interface UserInterface {
 	@WebMethod(operationName="getMovieRec")
     @WebResult(name="movielist") 
 	public List<Movie> getMovieRec(
+			@WebParam(name="personId") int personId,
 			@WebParam(name="quantity") int number
 			);
 	@WebMethod(operationName="getFoodRec")
     @WebResult(name="listfood") 
 	public List<Food> getFoodRec(
+			@WebParam(name="personId") int personId,
 			@WebParam(name="quantity") int number
 			);
 	
@@ -62,6 +64,7 @@ public interface UserInterface {
 	@WebMethod(operationName="addMovieRating")
     @WebResult(name="int") 
 	public int addMovieRating(
+			@WebParam(name="personId") int personId,
 			@WebParam(name="movieId") int movieId,
 			@WebParam(name="rating") double rating,
 			@WebParam(name="timestemp") Date timestemp
@@ -69,13 +72,14 @@ public interface UserInterface {
 	@WebMethod(operationName="modifyMovieRating")
     @WebResult(name="int") 
 	public int modifyMovieRating(
+			@WebParam(name="personId") int personId,
 			@WebParam(name="movieId") int movieId,
 			@WebParam(name="rating") double rating,
 			@WebParam(name="timestemp") Date timestemp
 			);
 	@WebMethod(operationName="getMovieRatings")
     @WebResult(name="MovieRatingList") 
-	public List<Evaluation> getMovieRating(
+	public List<Evaluation> getMovieRatings(
 			@WebParam(name="movieId") int movieId
 			);
 	
@@ -93,6 +97,7 @@ public interface UserInterface {
 	@WebMethod(operationName="addFoodRating")
     @WebResult(name="int") 
 	public int addFoodRating(
+			@WebParam(name="personId") int personId,
 			@WebParam(name="foodId") int foodId,
 			@WebParam(name="rating") double rating,
 			@WebParam(name="timestemp") Date timestemp
@@ -100,13 +105,14 @@ public interface UserInterface {
 	@WebMethod(operationName="modifyFoodRating")
     @WebResult(name="int") 
 	public int modifyFoodRating(
+			@WebParam(name="personId") int personId,
 			@WebParam(name="foodId") int foodId,
 			@WebParam(name="rating") double rating,
 			@WebParam(name="timestemp") Date timestemp
 			);
-	@WebMethod(operationName="getFoodRating")
+	@WebMethod(operationName="getFoodRatings")
     @WebResult(name="FoodRatingList") 
-	public List<Evaluation> getFoodRating(
+	public List<Evaluation> getFoodRatings(
 			@WebParam(name="foodId") int foodId
 			);
 }
