@@ -7,7 +7,9 @@ import javax.jws.WebService;
 
 import introsde.project.adopter.recombee.soap.Evaluation;
 import introsde.project.data.soap.model.Food;
+import introsde.project.data.soap.model.FoodType;
 import introsde.project.data.soap.model.Movie;
+import introsde.project.data.soap.model.MovieGen;
 import introsde.project.data.soap.model.Person;
 import introsde.project.data.soap.model.RecombeeDB;
 
@@ -441,6 +443,17 @@ public class UserImpl implements UserInterface{
 	@Override
 	public Person updatePerson(Person person) {
 		return Person.updatePerson(person);
+	}
+
+	@Override
+	public List<FoodType> getFoodTypes() {
+		
+		return FoodType.getAll();
+	}
+
+	@Override
+	public List<MovieGen> getMovieGens() {
+		return MovieGen.getAll();
 	}
 
 }

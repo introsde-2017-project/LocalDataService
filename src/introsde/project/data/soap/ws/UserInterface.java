@@ -13,7 +13,9 @@ import javax.jws.soap.SOAPBinding.Use;
 
 import introsde.project.adopter.recombee.soap.Evaluation;
 import introsde.project.data.soap.model.Food;
+import introsde.project.data.soap.model.FoodType;
 import introsde.project.data.soap.model.Movie;
+import introsde.project.data.soap.model.MovieGen;
 import introsde.project.data.soap.model.Person;
 
 
@@ -115,4 +117,12 @@ public interface UserInterface {
 	public List<Evaluation> getFoodRatings(
 			@WebParam(name="foodId") int foodId
 			);
+	
+	@WebMethod(operationName="getFoodTypes")
+    @WebResult(name="FoodTypeList") 
+	public List<FoodType> getFoodTypes();
+	
+	@WebMethod(operationName="getMovieGens")
+    @WebResult(name="MovieGenList") 
+	public List<MovieGen> getMovieGens();
 }
