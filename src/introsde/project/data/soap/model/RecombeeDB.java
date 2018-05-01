@@ -36,7 +36,11 @@ public class RecombeeDB {
 	}
 
 
-	public static  void addUserMdb(int idPerson, List<MovieGen> movieGens) {
+	public static void addUserMdb(int idPerson, List<MovieGen> movieGens) {
+		if(Person.getPersonById(idPerson)==null
+				&& movieGens.isEmpty()) 
+			return;
+		
 		List<String> itemType= new ArrayList<String>();
 		for(MovieGen m: movieGens) {
 			itemType.add(m.name());
@@ -47,6 +51,11 @@ public class RecombeeDB {
 
 
 	public static  void addUserFdb(int idPerson, List<FoodType> foodTypes) {
+		if(Person.getPersonById(idPerson)==null
+				&& foodTypes.isEmpty()) 
+			return;
+		
+		
 		List<String> itemType= new ArrayList<String>();
 		for(FoodType m: foodTypes) {
 			itemType.add(m.name());
