@@ -49,5 +49,14 @@ public enum FoodType implements Serializable {
 	public static List<FoodType> getAll() {
         return Arrays.asList(FoodType.values());
 	}
+	
+	public static FoodType fromString(String text) {
+	    for (FoodType b : FoodType.values()) {
+	      if (b.name.equalsIgnoreCase(text)) {
+	        return b;
+	      }
+	    }
+	    return null;
+	  }
 }
 

@@ -230,7 +230,9 @@ public class UserImpl implements UserInterface{
 
 	@Override
 	public Movie setMovie(Movie movie) {
-		return Movie.saveMovie(movie);
+		Movie m= Movie.saveMovie(movie);
+		RecombeeDB.addMovie(m.getIdMovie(),m.getGenere());
+		return m;
 //		MessageContext mctx = wsctx.getMessageContext();
 //		
 //		//get detail from request headers
@@ -262,6 +264,8 @@ public class UserImpl implements UserInterface{
 
 	@Override
 	public Food setFood(Food food) {
+		Food f= Food.saveFood(food);
+		RecombeeDB.addFood(f.getIdFood(),f.getType());
 		return Food.saveFood(food);
 //		MessageContext mctx = wsctx.getMessageContext();
 //		

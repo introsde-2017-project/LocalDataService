@@ -98,8 +98,20 @@ public class RecombeeDB {
 
 
 	public static void resetDB() {
-		serviceInt.resetBD("foodDB");
+		serviceInt.resetBD(foodRecombeeDB);
 		serviceInt.resetBD(movieRecombeeDB);
+		
+	}
+
+
+	public static void addMovie(int idMovie, MovieGen genere) {
+		serviceInt.additem(movieRecombeeDB, Integer.toString(idMovie), genere.name());
+		
+	}
+
+
+	public static void addFood(int idFood, FoodType type) {
+		serviceInt.additem(foodRecombeeDB, Integer.toString(idFood), type.name());
 		
 	}
 

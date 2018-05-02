@@ -55,4 +55,13 @@ public enum MovieGen implements Serializable {
 	public static List<MovieGen> getAll() {
         return Arrays.asList(MovieGen.values());
 	}
+	
+	public static MovieGen fromString(String text) {
+	    for (MovieGen b : MovieGen.values()) {
+	      if (b.name.equalsIgnoreCase(text)) {
+	        return b;
+	      }
+	    }
+	    return null;
+	  }
 }
