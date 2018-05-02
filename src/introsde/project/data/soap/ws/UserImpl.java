@@ -266,7 +266,7 @@ public class UserImpl implements UserInterface{
 	public Food setFood(Food food) {
 		Food f= Food.saveFood(food);
 		RecombeeDB.addFood(f.getIdFood(),f.getType());
-		return Food.saveFood(food);
+		return f;
 //		MessageContext mctx = wsctx.getMessageContext();
 //		
 //		//get detail from request headers
