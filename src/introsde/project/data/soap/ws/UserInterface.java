@@ -58,7 +58,7 @@ public interface UserInterface {
 	
 	
 	@WebMethod(operationName="setMovie")
-    @WebResult(name="movie") 
+    @WebResult(name="Movie") 
 	public Movie setMovie(
 			@WebParam(name="movie") Movie movie
 			);

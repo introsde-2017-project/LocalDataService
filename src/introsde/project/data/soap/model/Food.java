@@ -18,7 +18,7 @@ import introsde.project.data.soap.dao.DatabaseDao;
 
 @Entity
 @NamedQuery(name="Food.findAll", query="SELECT F FROM Food F")
-@XmlRootElement(name="movie")
+@XmlRootElement(name="food")
 public class Food implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@TableGenerator(name = "Food_Gen",
