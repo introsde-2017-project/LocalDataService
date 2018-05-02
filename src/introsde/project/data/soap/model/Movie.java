@@ -12,7 +12,6 @@ import introsde.project.data.soap.dao.DatabaseDao;
 
 
 @Entity  // indicates that this class is an entity to persist in DB
-@Table(name="Movie") // to whate table must be persisted
 @NamedQuery(name="Movie.findAll", query="SELECT M FROM Movie M")
 @XmlRootElement(name="movie")
 public class Movie implements Serializable{

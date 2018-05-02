@@ -12,12 +12,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 import javax.persistence.TableGenerator;
+import javax.xml.bind.annotation.XmlRootElement;
 
 import introsde.project.data.soap.dao.DatabaseDao;
 
 @Entity
 @NamedQuery(name="Food.findAll", query="SELECT F FROM Food F")
-
+@XmlRootElement(name="movie")
 public class Food implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@TableGenerator(name = "Food_Gen",
