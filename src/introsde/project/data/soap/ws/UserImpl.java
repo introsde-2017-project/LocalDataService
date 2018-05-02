@@ -19,7 +19,7 @@ public class UserImpl implements UserInterface{
     //WebServiceContext wsctx;
 	
 	public UserImpl() {
-		RecombeeDB.resetDB();
+		
 	}
 
 	@Override
@@ -458,6 +458,11 @@ public class UserImpl implements UserInterface{
 	@Override
 	public List<MovieGen> getMovieGens() {
 		return MovieGen.getAll();
+	}
+
+	@Override
+	public void resetDB() {
+		RecombeeDB.resetDB();
 	}
 
 }
