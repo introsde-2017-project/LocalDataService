@@ -1,12 +1,31 @@
 package introsde.project.data.soap.init;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
+import javax.xml.datatype.DatatypeConfigurationException;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
+import com.recombee.api_client.api_requests.AddRating;
+import com.recombee.api_client.api_requests.AddUser;
+import com.recombee.api_client.api_requests.Request;
+import com.recombee.api_client.api_requests.SetUserValues;
+
 import introsde.project.adopter.recombee.soap.RecombeeImplService;
 import introsde.project.adopter.recombee.soap.RecombeeInterface;
+import introsde.project.data.soap.model.Food;
 import introsde.project.data.soap.model.FoodType;
+import introsde.project.data.soap.model.Movie;
 import introsde.project.data.soap.model.MovieGen;
 import introsde.project.data.soap.model.Person;
 import introsde.project.data.soap.model.RecombeeDB;
@@ -19,7 +38,6 @@ public class DatabaseINIT {
 	
 	public static void initializeDB(){
 		
-		RecombeeDB.resetDB();
 		
 		
 		Person p= new Person("george","michael", "username","password","1980-06-20", new LinkedList<FoodType>() {{
@@ -71,7 +89,10 @@ public class DatabaseINIT {
 	}
 	
 	public static void main(String[] args) {
-		DatabaseINIT.initializeDB();
+		//DatabaseINIT.initializeDB();
+		//initMovie();
 	}
+	
+	
 	
 }

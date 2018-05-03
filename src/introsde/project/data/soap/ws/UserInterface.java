@@ -22,10 +22,7 @@ import introsde.project.data.soap.model.Person;
 @WebService
 @SOAPBinding(style = Style.DOCUMENT, use=Use.LITERAL)
 public interface UserInterface {
-	@WebMethod(operationName="resetDB")
-    @WebResult(name="void") 
-	public void resetDB(
-			);
+	
 	
 	@WebMethod(operationName="addPerson")
     @WebResult(name="Person") 

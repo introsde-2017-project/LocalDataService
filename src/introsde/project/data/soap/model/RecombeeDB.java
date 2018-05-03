@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import com.recombee.api_client.api_requests.Request;
+
 import introsde.project.adopter.recombee.soap.Evaluation;
 import introsde.project.adopter.recombee.soap.RecombeeImplService;
 import introsde.project.adopter.recombee.soap.RecombeeInterface;
@@ -20,22 +22,23 @@ public class RecombeeDB {
 	public RecombeeDB(){}
 	
 	
-	public static  int addRatingF(int itemId, int personId, double rating, Date timestemp) {			
+	public static  int addFoodRating(int itemId, int personId, double rating, Date timestemp) {			
 		return serviceInt.addRating(foodRecombeeDB, Integer.toString(personId), Integer.toString(itemId), rating, DateToXML.GregorianCalendar(timestemp));
 	}
-	public static  int addRatingM(int itemId, int personId, double rating, Date timestemp) {			
+	public static  int addMovieRating(int itemId, int personId, double rating, Date timestemp) {			
 		return serviceInt.addRating(movieRecombeeDB, Integer.toString(personId), Integer.toString(itemId), rating, DateToXML.GregorianCalendar(timestemp));
 	}
 
 
-	public static  List<Evaluation> getItemRatingsF(int itemId) {
+	public static  List<Evaluation> getFoodRatings(int itemId) {
 		return serviceInt.getItemRating(foodRecombeeDB, Integer.toString(itemId));
 	}
-	public static  List<Evaluation> getItemRatingsM(int itemId) {
+	public static  List<Evaluation> getMovieRatings(int itemId) {
 		return serviceInt.getItemRating(movieRecombeeDB, Integer.toString(itemId));
 	}
 
 
+	//adding a user in recombee movie database
 	public static void addUserMdb(int idPerson, List<MovieGen> movieGens) {
 		if(Person.getPersonById(idPerson)==null
 				&& movieGens.isEmpty()) 
@@ -49,7 +52,8 @@ public class RecombeeDB {
 		
 	}
 
-
+	
+	//adding a user in recombee food database
 	public static  void addUserFdb(int idPerson, List<FoodType> foodTypes) {
 		if(Person.getPersonById(idPerson)==null
 				&& foodTypes.isEmpty()) 
@@ -76,7 +80,7 @@ public class RecombeeDB {
 	}
 
 
-	public static  List<Food> getFRec(int idPerson, int quantity) {
+	public static  List<Food> getFoodRec(int idPerson, int quantity) {
 		List<Food> foods= new ArrayList<>();
 		List<String> recmded=serviceInt.getRec4User(foodRecombeeDB, Integer.toString(idPerson), quantity);
 		for(String rec: recmded) {
@@ -87,20 +91,13 @@ public class RecombeeDB {
 	}
 
 
-	public static  int modifyRatingM(int idPerson, int itemId, double rating,
+	public static  int modifyMovieRating(int idPerson, int itemId, double rating,
 			Date timestemp) {
 		return serviceInt.modifyRating(movieRecombeeDB, Integer.toString(idPerson), Integer.toString(itemId), rating, DateToXML.GregorianCalendar(timestemp));
 	}
-	public static  int modifyRatingF(int idPerson, int itemId, double rating,
+	public static  int modifyFoodRating(int idPerson, int itemId, double rating,
 			Date timestemp) {
 		return serviceInt.modifyRating(movieRecombeeDB, Integer.toString(idPerson), Integer.toString(itemId), rating, DateToXML.GregorianCalendar(timestemp));
-	}
-
-
-	public static void resetDB() {
-		serviceInt.resetBD(foodRecombeeDB);
-		serviceInt.resetBD(movieRecombeeDB);
-		
 	}
 
 

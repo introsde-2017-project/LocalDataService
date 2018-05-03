@@ -72,7 +72,7 @@ public class UserImpl implements UserInterface{
 	public int addMovieRating(int personId, int movieId, double rating, Date timestemp) {
 		if(Person.getPersonById(personId)!=null
 				&&Movie.getMovieById(movieId)!=null) {
-			return RecombeeDB.addRatingM(movieId,personId,rating,timestemp);
+			return RecombeeDB.addMovieRating(movieId,personId,rating,timestemp);
 		}else{
         	return -1;
         }
@@ -110,7 +110,7 @@ public class UserImpl implements UserInterface{
 	@Override
 	public List<Evaluation> getMovieRatings(int movieId) {
 		if (Movie.getMovieById(movieId)!=null){
-	    	return RecombeeDB.getItemRatingsM(movieId);
+	    	return RecombeeDB.getMovieRatings(movieId);
 	    }else{
         	return null;
         }
@@ -154,7 +154,7 @@ public class UserImpl implements UserInterface{
 	public int addFoodRating(int personId,int foodId, double rating, Date timestemp) {
 		if (Person.getPersonById(personId)!=null 
 	    		&& Food.getFoodById(foodId)!=null){
-	    	return RecombeeDB.addRatingF(foodId,personId,rating,timestemp);
+	    	return RecombeeDB.addFoodRating(foodId,personId,rating,timestemp);
 	    }else{
         	return -1;
         }
@@ -193,7 +193,7 @@ public class UserImpl implements UserInterface{
 	@Override
 	public List<Evaluation> getFoodRatings(int foodId) {
 		if (Food.getFoodById(foodId)!=null){
-	    	return RecombeeDB.getItemRatingsF(foodId);
+	    	return RecombeeDB.getFoodRatings(foodId);
 	    }else{
         	return null;
         }
@@ -336,7 +336,7 @@ public class UserImpl implements UserInterface{
 	@Override
 	public List<Food> getFoodRec(int personId,int number) {
 		if (Person.getPersonById(personId)!=null){
-	    	return RecombeeDB.getFRec(Person.getPersonById(personId).getIdPerson(),number);
+	    	return RecombeeDB.getFoodRec(Person.getPersonById(personId).getIdPerson(),number);
 	    }else{
         	return null;
         }
@@ -374,7 +374,7 @@ public class UserImpl implements UserInterface{
 	public int modifyMovieRating(int personId,int movieId, double rating, Date timestemp) {
 		if (Person.getPersonById(personId)!=null
 				&& Movie.getMovieById(movieId)!=null){
-	    	return RecombeeDB.modifyRatingM(Person.getPersonById(personId).getIdPerson(),movieId,rating,timestemp);
+	    	return RecombeeDB.modifyMovieRating(Person.getPersonById(personId).getIdPerson(),movieId,rating,timestemp);
 	    }else{
         	return -1;
         }
@@ -411,7 +411,7 @@ public class UserImpl implements UserInterface{
 	public int modifyFoodRating(int personId,int foodId, double rating, Date timestemp) {
 		if (Person.getPersonById(personId)!=null
 	    		&& Food.getFoodById(foodId)!=null){
-	    	return RecombeeDB.modifyRatingF(Person.getPersonById(personId).getIdPerson(),foodId,rating,timestemp);
+	    	return RecombeeDB.modifyFoodRating(Person.getPersonById(personId).getIdPerson(),foodId,rating,timestemp);
 	    }else{
         	return -1;
         }
@@ -458,11 +458,6 @@ public class UserImpl implements UserInterface{
 	@Override
 	public List<MovieGen> getMovieGens() {
 		return MovieGen.getAll();
-	}
-
-	@Override
-	public void resetDB() {
-		RecombeeDB.resetDB();
 	}
 
 }
