@@ -18,6 +18,7 @@ public class UserImpl implements UserInterface{
 	//@Resource
     //WebServiceContext wsctx;
 	
+	
 	public UserImpl() {
 		
 	}
