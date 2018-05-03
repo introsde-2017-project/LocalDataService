@@ -297,9 +297,9 @@ public class UserImpl implements UserInterface{
 	}
 
 	@Override
-	public List<Movie> getMovieRec(int personId,int number) {
+	public List<String> getMovieRec(int personId,int number) {
 		if (Person.getPersonById(personId)!=null){
-	    	return RecombeeDB.getMRec(Person.getPersonById(personId).getIdPerson(),number);
+	    	return RecombeeDB.getMovieRec(Person.getPersonById(personId).getIdPerson(),number);
 	    }else{
         	return null;
         }
@@ -334,7 +334,7 @@ public class UserImpl implements UserInterface{
 	}
 
 	@Override
-	public List<Food> getFoodRec(int personId,int number) {
+	public List<String> getFoodRec(int personId,int number) {
 		if (Person.getPersonById(personId)!=null){
 	    	return RecombeeDB.getFoodRec(Person.getPersonById(personId).getIdPerson(),number);
 	    }else{

@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import com.recombee.api_client.api_requests.Request;
-
 import introsde.project.adopter.recombee.soap.Evaluation;
 import introsde.project.adopter.recombee.soap.RecombeeImplService;
 import introsde.project.adopter.recombee.soap.RecombeeInterface;
@@ -69,25 +67,27 @@ public class RecombeeDB {
 	}
 
 
-	public static  List<Movie> getMRec(int idPerson, int quantity) {
-		List<Movie> movies= new ArrayList<>();
-		List<String> recmded=serviceInt.getRec4User(movieRecombeeDB, Integer.toString(idPerson), quantity);
-		for(String rec: recmded) {
-			movies.add(Movie.getMovieById(Integer.valueOf(rec)));
-		}
+	public static  List<String> getMovieRec(int idPerson, int quantity) {
+//		List<Movie> movies= new ArrayList<>();
+//		List<String> recmded=serviceInt.getRec4User(movieRecombeeDB, Integer.toString(idPerson), quantity);
+//		for(String rec: recmded) {
+//			movies.add(Movie.getMovieById(Integer.valueOf(rec)));
+//		}
 		 
-		return movies;
+		return serviceInt.getRec4User(movieRecombeeDB, Integer.toString(idPerson), quantity);
 	}
 
 
-	public static  List<Food> getFoodRec(int idPerson, int quantity) {
-		List<Food> foods= new ArrayList<>();
-		List<String> recmded=serviceInt.getRec4User(foodRecombeeDB, Integer.toString(idPerson), quantity);
-		for(String rec: recmded) {
-			foods.add(Food.getFoodById(Integer.valueOf(rec)));
-		}
-		 
-		return foods;
+	public static  List<String> getFoodRec(int idPerson, int quantity) {
+//		List<Food> foods= new ArrayList<>();
+//		List<String> recmded=serviceInt.getRec4User(foodRecombeeDB, Integer.toString(idPerson), quantity);
+//		for(String rec: recmded) {
+//			foods.add(Food.getFoodById(Integer.valueOf(rec)));
+//		}
+//		 
+//		return foods;
+		
+		return serviceInt.getRec4User(foodRecombeeDB, Integer.toString(idPerson), quantity);
 	}
 
 

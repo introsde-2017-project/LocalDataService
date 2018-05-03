@@ -41,13 +41,13 @@ public interface UserInterface {
 			);
 	@WebMethod(operationName="getMovieRec")
     @WebResult(name="movielist") 
-	public List<Movie> getMovieRec(
+	public List<String> getMovieRec(
 			@WebParam(name="personId") int personId,
 			@WebParam(name="quantity") int number
 			);
 	@WebMethod(operationName="getFoodRec")
     @WebResult(name="listfood") 
-	public List<Food> getFoodRec(
+	public List<String> getFoodRec(
 			@WebParam(name="personId") int personId,
 			@WebParam(name="quantity") int number
 			);
