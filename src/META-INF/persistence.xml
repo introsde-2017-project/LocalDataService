@@ -9,8 +9,6 @@
 	<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 	
 	<class>introsde.project.data.soap.model.Person</class>
-	<class>introsde.project.data.soap.model.Food</class>
-	<class>introsde.project.data.soap.model.Movie</class>
 	
 	<properties>
             <!-- The jdbc driver we will use to connect to the database -->
