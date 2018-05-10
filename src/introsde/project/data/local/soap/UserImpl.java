@@ -1,12 +1,12 @@
-package introsde.project.data.soap.ws;
+package introsde.project.data.local.soap;
 
 import java.util.List;
 
 import javax.jws.WebService;
 
-import introsde.project.data.soap.model.FoodType;
-import introsde.project.data.soap.model.MovieGen;
-import introsde.project.data.soap.model.Person;
+import introsde.project.data.local.model.FoodType;
+import introsde.project.data.local.model.MovieGen;
+import introsde.project.data.local.model.Person;
 
 @WebService(endpointInterface = "introsde.project.data.soap.ws.UserInterface")
 public class UserImpl implements UserInterface{

@@ -1,4 +1,4 @@
-package introsde.project.data.soap.model;
+package introsde.project.data.local.model;
 
 import java.io.Serializable;
 import java.util.LinkedList;
@@ -17,7 +17,7 @@ import javax.persistence.Table;
 import javax.persistence.TableGenerator;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import introsde.project.data.soap.dao.DatabaseDao;
+import introsde.project.data.local.dao.DatabaseDao;
 
 @Entity  // indicates that this class is an entity to persist in DB
 @Table(name="Person") // to whate table must be persisted

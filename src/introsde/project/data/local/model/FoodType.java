@@ -1,4 +1,4 @@
-package introsde.project.data.soap.model;
+package introsde.project.data.local.model;
 
 import java.io.Serializable;
 import java.util.Arrays;

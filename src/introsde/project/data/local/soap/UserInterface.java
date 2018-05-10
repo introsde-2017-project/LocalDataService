@@ -1,4 +1,4 @@
-package introsde.project.data.soap.ws;
+package introsde.project.data.local.soap;
 
 import java.util.List;
 
@@ -10,9 +10,9 @@ import javax.jws.soap.SOAPBinding;
 import javax.jws.soap.SOAPBinding.Style;
 import javax.jws.soap.SOAPBinding.Use;
 
-import introsde.project.data.soap.model.FoodType;
-import introsde.project.data.soap.model.MovieGen;
-import introsde.project.data.soap.model.Person;
+import introsde.project.data.local.model.FoodType;
+import introsde.project.data.local.model.MovieGen;
+import introsde.project.data.local.model.Person;
 
 
 @WebService

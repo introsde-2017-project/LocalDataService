@@ -1,4 +1,4 @@
-package introsde.project.data.soap.dao;
+package introsde.project.data.local.dao;
 
 import javax.persistence.*;
 
