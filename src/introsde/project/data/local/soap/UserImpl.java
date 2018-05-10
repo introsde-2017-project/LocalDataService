@@ -8,7 +8,7 @@ import introsde.project.data.local.model.FoodType;
 import introsde.project.data.local.model.MovieGen;
 import introsde.project.data.local.model.Person;
 
-@WebService(endpointInterface = "introsde.project.data.soap.ws.UserInterface")
+@WebService(endpointInterface = "introsde.project.data.local.soap.UserInterface")
 public class UserImpl implements UserInterface{
 	//@Resource
     //WebServiceContext wsctx;
@@ -21,8 +21,6 @@ public class UserImpl implements UserInterface{
 	@Override
 	public Person addNewPerson(Person person) {
 		Person p=Person.savePerson(person);
-		//RecombeeDB.addUserMdb(p.getIdPerson(),p.getMovieGens());
-		//RecombeeDB.addUserFdb(p.getIdPerson(),p.getFoodTypes());
 		return p;
 	}
 
