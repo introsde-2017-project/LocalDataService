@@ -30,6 +30,10 @@ public interface UserInterface {
 	public Person getPerson(
 			@WebParam(name="username") String username
 			);
+	@WebMethod(operationName="getAllPerson")
+    @WebResult(name="PersonList") 
+	public List<Person> getAllPerson(
+			);
 	@WebMethod(operationName="updatePerson")
     @WebResult(name="Person") 
 	public Person updatePerson(
