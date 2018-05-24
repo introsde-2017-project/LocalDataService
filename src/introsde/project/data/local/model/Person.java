@@ -39,8 +39,10 @@ public class Person implements Serializable{
 	 private String userName;
 	 @Column(name="password")
 	 private String password;
-	 @Column(name="birthDate")
-	 private String birthDate;
+	 @Column(name="email")
+	 private String email;
+	 @Column(name="token")
+	 private String token;
 //	 @OneToMany(
 //	    		mappedBy="person",
 //	    		cascade=CascadeType.ALL,
@@ -63,7 +65,7 @@ public class Person implements Serializable{
 			 String firstName, 
 			 String userName, 
 			 String password, 
-			 String birthDate, 
+			 String email, 
 			 LinkedList<FoodType> fType,
 			 LinkedList<MovieGen> mGen
 			 ) {
@@ -71,7 +73,7 @@ public class Person implements Serializable{
 		this.lastName= lastName;
 		this.userName= userName;
 		this.password= password;
-		this.birthDate= birthDate;
+		this.email= email;
 		this.foodTypes=fType;
 		this.movieGens= mGen;
 	}
@@ -125,14 +127,22 @@ public class Person implements Serializable{
 	 public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	 }
-	 public String getBirthDate() {
-		return birthDate;
+	 public String getEmail() {
+		return email;
 	 }
-	 public void setBirthDate(String birthDate) {
-		this.birthDate = birthDate;
+	 public void setEmail(String email) {
+		this.email = email;
 	 }
 	 
-	 public static Person getPersonById(int PersonId) {
+	 public String getToken() {
+		return token;
+	}
+
+	public void setToken(String token) {
+		this.token = token;
+	}
+
+	public static Person getPersonById(int PersonId) {
 	        EntityManager em = DatabaseDao.instance.createEntityManager();
 	        Person p = em.find(Person.class, PersonId);
 	        DatabaseDao.instance.closeConnections(em);
