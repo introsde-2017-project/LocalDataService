@@ -197,5 +197,14 @@ public class Person implements Serializable{
 			}
 			return null;
 		}
+		
+		public static Person getPersonByToken(String token2) {
+			for(Person p: Person.getAll()) {
+				if(token2.equals(p.getToken())) {
+					return p;
+				}
+			}
+			return null;
+		}
 
 }

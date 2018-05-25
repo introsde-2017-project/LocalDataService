@@ -30,6 +30,11 @@ public interface UserInterface {
 	public Person getPerson(
 			@WebParam(name="username") String username
 			);
+	@WebMethod(operationName="getPersonByToken")
+    @WebResult(name="Person") 
+	public Person getPersonByToken(
+			@WebParam(name="token") String token
+			);
 	@WebMethod(operationName="getAllPerson")
     @WebResult(name="PersonList") 
 	public List<Person> getAllPerson(

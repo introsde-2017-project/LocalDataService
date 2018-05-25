@@ -51,6 +51,11 @@ public class UserImpl implements UserInterface{
 		return Person.getAll();
 	}
 
+	@Override
+	public Person getPersonByToken(String token) {
+		return Person.getPersonByToken(token);
+	}
+
 
 //	@Override
 //	public Movie getMovie(int movieId) {
