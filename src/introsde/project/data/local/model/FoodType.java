@@ -14,6 +14,7 @@ public enum FoodType implements Serializable {
 	Thai("Thai"),
 	Mexican("Mexican");
 	
+	
 	private String name;
 //	@ManyToOne
 //	@JoinColumn(name="personId",referencedColumnName="personId")
