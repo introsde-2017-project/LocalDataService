@@ -12,7 +12,6 @@ public enum DatabaseDao {
             emf.close();
         }
         emf = Persistence.createEntityManagerFactory("introsde_project_data");
-
     }
 
     public EntityManager createEntityManager() {
