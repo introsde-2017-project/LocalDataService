@@ -191,9 +191,8 @@ public class Person implements Serializable{
 
 		public static Person getPersonByUserName(String username) {
 			for(Person p: Person.getAll()) {
-				if(p.getUserName().equalsIgnoreCase(username)) {
+				if(p.getUserName().equalsIgnoreCase(username)) 
 					return p;
-				}
 			}
 			return null;
 		}
