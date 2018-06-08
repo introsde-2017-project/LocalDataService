@@ -1,52 +1,67 @@
-introsde-2017-project-LocalDataService  
+# introsde-2017-project-LocalDataService  
  
  
-Identification:  
 NAME: Cheema Danish Asghar  
 EMAIL: danishasghar.cheema@studenti.unitn.it  
  
-Client Code Done by:      
-NAME: Main muhammad Faheem - Jan     
+Group partner:      
+NAME: Jan Main muhammad Faheem     
 EMAIL:main.jan@unitn.it    
  
- Server heroku ULR:     
- Server Git ripo:     
+Heroku WSDL ULR: https://dataservice-introsde-2018.herokuapp.com/ws/database?wsdl     
+GitHub ripo: https://github.com/introsde-2017-project/LocalDataService  
+Project WIKI: https://github.com/introsde-2017-project/Wiki         
  
- Client Git riop:      
- 
-ABOUT THE CODE : In this repository "LocalDataService" i have made the following packages.    
-1)model    
-2)Dao      
-3)soap            
-in the "model" package there are 2 enums    
+## Architecture:
+"LocalDataService" is consist of following packages.    
+* model -> contains all the Enum, Entity and Business logic classes required to persist and retrive the data from local DB.  
+* Dao -> it is used to handel data access object requests to local sqlite database defined in persistence.xml      
+* soap -> it defines all the methods visible to service clients.            
+
+## Implementation:
+in the `model` package there are 2 enums and an Entity class  
 1) `FoodType.java` it has some food types defined already. which are the following.
 
 |Indian|Italian|Chinese|Thai|Mexican|  
 |------|-------|-------|----|-------|  
-2) `MovieGen.java` it has some movies genere defined already as shown in the table, to be used later on.it has some methods like getting list   of all the moviesgenres and some getters and setters. 
+2) `MovieGen.java` it has some movies genere defined already as shown in the table, to be used later on.
 
 |Drama|Comedy|Romance|Action|Adventure|Thriller|Fiction|Animation|Horror|  
 |-----|------|-------|------|---------|--------|-------|---------|------|  
-
-then there is one class named as  
+ 
 3) `Person.java` which has the following attributes:     
 
 |firstName|lastName|userName|password|birthDate|FoodType|MovieGen|  
 |---------|--------|--------|--------|---------|--------|--------|  
 
-This person class has many to one relationship with FoodType.java and MovieGen.java. i.e a person can have more than one food and   movies. there are objects are declared in the person class.   
+This person class has many to one relationship with FoodType.java and MovieGen.java. i.e a person can have more than one food and movies.   
 
-In the "Dao" package there is just one class named as:
-1) `DatabaseDao.java` which gives us a connection to the database ,it has some  methods like:  
-createEntityManager()    
-getEntityManagerFactory()  
-getTransaction(EntityManager em).  
-it gives me the entity manager object through which i can communicate with the database.  
+In the `Dao` package there is just one class named as:
+* `DatabaseDao.java` which gives us a connection to the database ,it has some  methods like:  
+ * createEntityManager()    
+ * getEntityManagerFactory()  
+ * getTransaction(EntityManager)  
 
-In the "soap" packgae there is one interface and a class which implement this interface.the methods which are implemented in this   class   are:   
-`addNewPerson(Person person)` it adds new person to the database.        
-`getPerson(String username)` it returns person given its username.        
+In the `soap` packgae there is an interface and a class which implement this interface.
+The methods which are availabe to service client are:   
+`addNewPerson(Person)` it adds new person to the database.        
+`getPerson(username)` it returns person given its username.  
+`getPersonByToken(token)` returns a person.
+`getAllPerson()` return list of persons. used for debug perpose only.
 `updatePerson(Person person)` it updates person.       
 `getFoodTypes()` this method returns food type.      
 `getMovieGens()` this method returns Movie genere.      
 
+
+## Execuation:
+1: clone or download the code from server git repo.  
+2: run following commands on command line   
+```
+git init
+git add .
+git commit -am "initial commit"
+heroku create NAME-OF-HEROKU-APP
+git push heroku master 
+
+```
+in my project NAME-OF-HEROKU-APP="dataservice-introsde-2018"
