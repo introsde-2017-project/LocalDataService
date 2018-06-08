@@ -19,17 +19,17 @@ ABOUT THE CODE : In this repository "LocalDataService" i have made the following
 2)Dao      
 3)soap            
 in the "model" package there are 2 enums    
-1) `FoodType.java` which has some attributes like name of the food and type etc etc      
-and some foods are defined and there are some methods which use these attributes and some getters and setters    
+1) `FoodType.java` it has some food types defined already. which are the following.
+
+|Indian|Italian|Chinese|Thai|Mexican|  
+|------|-------|-------|----|-------|  
 2) `MovieGen.java`   which has some movies defined already to be used later on.it has some methods like getting list of all the   moviesgenres and some getters and setters.   
 then there is one class named as:  
-3) `Person.java` which has the following attributes: like firstname,lastname,id,password and it has one-to-many relation with  
+3) `Person.java` which has the following attributes:     
 
 |firstName|lastName|userName|password|birthDate|FoodType|MovieGen|  
 |---------|--------|--------|--------|---------|--------|--------|  
-
-FoodType.java   
-and MovieGen.java. i.e a person can have more than one food and movies. there are objects are declared in the person class.   
+This person class has many to one relationship with FoodType.java and MovieGen.java. i.e a person can have more than one food and   movies. there are objects are declared in the person class.   
 
 In the "Dao" package there is just one class named as:
 1) `DatabaseDao.java` which gives us a connection to the database ,it has some  methods like:  
