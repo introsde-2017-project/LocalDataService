@@ -28,7 +28,7 @@ in the "model" package there are 2 enums
 |Drama|Comedy|Romance|Action|Adventure|Thriller|Fiction|Animation|Horror|  
 |-----|------|-------|------|---------|--------|-------|---------|------|  
 
-then there is one class named as:  
+then there is one class named as  
 3) `Person.java` which has the following attributes:     
 
 |firstName|lastName|userName|password|birthDate|FoodType|MovieGen|  
