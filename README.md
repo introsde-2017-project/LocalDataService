@@ -10,7 +10,11 @@ EMAIL:main.jan@unitn.it
  
 Heroku WSDL ULR: https://dataservice-introsde-2018.herokuapp.com/ws/database?wsdl     
 GitHub ripo: https://github.com/introsde-2017-project/LocalDataService  
-Project WIKI: https://github.com/introsde-2017-project/Wiki         
+Project WIKI: https://github.com/introsde-2017-project/Wiki   
+
+## introduction:
+This is an adopter layer for the `knowYourCity` app which uses local sqlite for store the user .   
+Its a Soap Service which can be used via WSDL in order to save, modify, and get data like persisting new user or getting all the movie gen and movie types in the DataBase. 
  
 ## Architecture:
 "LocalDataService" is consist of following packages.    
