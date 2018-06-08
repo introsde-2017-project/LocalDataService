@@ -23,7 +23,11 @@ in the "model" package there are 2 enums
 
 |Indian|Italian|Chinese|Thai|Mexican|  
 |------|-------|-------|----|-------|  
-2) `MovieGen.java`   which has some movies defined already to be used later on.it has some methods like getting list of all the   moviesgenres and some getters and setters.   
+2) `MovieGen.java` it has some movies genere defined already as shown in the table, to be used later on.it has some methods like getting list   of all the moviesgenres and some getters and setters. 
+
+|Drama|Comedy|Romance|Action|Adventure|Thriller|Fiction|Animation|Horror|  
+|-----|------|-------|------|---------|--------|-------|---------|------|  
+
 then there is one class named as:  
 3) `Person.java` which has the following attributes:     
 
