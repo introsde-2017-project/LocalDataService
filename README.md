@@ -43,9 +43,9 @@ getEntityManagerFactory()
 getTransaction(EntityManager em).  
 it gives me the entity manager object through which i can communicate with the database.  
 
-In the "soap" packgae there is one interface and a class which implement this interface.the methods which are implemented in this   class   are: 
-`addNewPerson(Person person)` it adds new person to the database.      
-`getPerson(String username)` it returns person given its username.      
+In the "soap" packgae there is one interface and a class which implement this interface.the methods which are implemented in this   class   are:   
+`addNewPerson(Person person)` it adds new person to the database.        
+`getPerson(String username)` it returns person given its username.        
 `updatePerson(Person person)` it updates person.       
 `getFoodTypes()` this method returns food type.      
 `getMovieGens()` this method returns Movie genere.      
