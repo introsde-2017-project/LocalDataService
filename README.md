@@ -29,6 +29,7 @@ then there is one class named as:
 
 |firstName|lastName|userName|password|birthDate|FoodType|MovieGen|  
 |---------|--------|--------|--------|---------|--------|--------|  
+
 This person class has many to one relationship with FoodType.java and MovieGen.java. i.e a person can have more than one food and   movies. there are objects are declared in the person class.   
 
 In the "Dao" package there is just one class named as:
