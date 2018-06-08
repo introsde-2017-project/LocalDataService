@@ -43,16 +43,8 @@ public class Person implements Serializable{
 	 private String email;
 	 @Column(name="token")
 	 private String token;
-//	 @OneToMany(
-//	    		mappedBy="person",
-//	    		cascade=CascadeType.ALL,
-//	    		fetch=FetchType.EAGER)
 	 @ElementCollection
 	 private List<FoodType> foodTypes;
-//	 @OneToMany(
-//	    		mappedBy="person",
-//	    		cascade=CascadeType.ALL,
-//	    		fetch=FetchType.EAGER)
 	 @ElementCollection
 	 private List<MovieGen> movieGens;
 	 
