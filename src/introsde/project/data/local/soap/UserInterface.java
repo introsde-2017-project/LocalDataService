@@ -35,10 +35,10 @@ public interface UserInterface {
 	public Person getPersonByToken(
 			@WebParam(name="token") String token
 			);
-	@WebMethod(operationName="getAllPerson")
-    @WebResult(name="PersonList") 
-	public List<Person> getAllPerson(
-			);
+//	@WebMethod(operationName="getAllPerson")
+//    @WebResult(name="PersonList") 
+//	public List<Person> getAllPerson(
+//			);
 	@WebMethod(operationName="updatePerson")
     @WebResult(name="Person") 
 	public Person updatePerson(
