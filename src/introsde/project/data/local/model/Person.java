@@ -153,7 +153,7 @@ public class Person implements Serializable{
 
 	    public static Person savePerson(Person p){
 	    	if(Person.getPersonByUserName(p.getUserName())!=null) {
-	    		throw new IllegalArgumentException("The value is already in the list.");
+	    		return null;
 	    	}
 	        EntityManager em = DatabaseDao.instance.createEntityManager();
 	        EntityTransaction tx = em.getTransaction();
@@ -191,7 +191,7 @@ public class Person implements Serializable{
 				if(p.getUserName().equalsIgnoreCase(username)) 
 					return p;
 			}
-			throw new IllegalArgumentException("No User with username: "+username+" in the DB");
+			return null;
 		}
 		
 		public static Person getPersonByToken(String token2) {
@@ -203,7 +203,7 @@ public class Person implements Serializable{
 					return p;
 				}
 			}
-			throw new IllegalArgumentException("No User with token: "+token2+" in the DB");
+			return null;
 		}
 
 }

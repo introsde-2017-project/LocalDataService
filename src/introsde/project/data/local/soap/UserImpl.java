@@ -21,13 +21,17 @@ public class UserImpl implements UserInterface{
 	@Override
 	public Person addNewPerson(Person person) {
 		Person p=Person.savePerson(person);
+		if(p== null)
+			throw new IllegalArgumentException("The value is already in the list.");
 		return p;
 	}
 
 	@Override
 	public Person getPerson(String username) {
-		return Person.getPersonByUserName(username);
-
+		Person p=Person.getPersonByUserName(username);
+		if(p==null)
+			throw new IllegalArgumentException("No User with username: \""+username+"\" in the DB");
+		return p;
 	}
 
 	@Override
@@ -53,7 +57,10 @@ public class UserImpl implements UserInterface{
 
 	@Override
 	public Person getPersonByToken(String token) {
-		return Person.getPersonByToken(token);
+		Person p= Person.getPersonByToken(token);
+		if(p==null)
+			throw new IllegalArgumentException("No User with token: \""+token+"\" in the DB");
+		return p;
 	}
 
 
