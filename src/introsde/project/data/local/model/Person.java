@@ -150,8 +150,9 @@ public class Person implements Serializable{
 	    }
 
 	    public static Person savePerson(Person p){
-	    	if(Person.getPersonByUserName(p.getUserName())!=null)
+	    	if(Person.getPersonByUserName(p.getUserName())!=null) {
 	    		return null;
+	    	}
 	        EntityManager em = DatabaseDao.instance.createEntityManager();
 	        EntityTransaction tx = em.getTransaction();
 	        tx.begin();

@@ -46,10 +46,10 @@ public class UserImpl implements UserInterface{
 		return MovieGen.getAll();
 	}
 
-//	@Override
-//	public List<Person> getAllPerson() {
-//		return Person.getAll();
-//	}
+	@Override
+	public List<Person> getAllPerson() {
+		return Person.getAll();
+	}
 
 	@Override
 	public Person getPersonByToken(String token) {
