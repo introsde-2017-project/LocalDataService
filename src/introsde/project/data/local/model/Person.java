@@ -138,6 +138,8 @@ public class Person implements Serializable{
 	        EntityManager em = DatabaseDao.instance.createEntityManager();
 	        Person p = em.find(Person.class, PersonId);
 	        DatabaseDao.instance.closeConnections(em);
+	        if(p==null)
+	        	throw new IllegalArgumentException("No User with username: "+PersonId+" in the DB");
 	        return p;
 	    }
 	    
@@ -189,7 +191,7 @@ public class Person implements Serializable{
 				if(p.getUserName().equalsIgnoreCase(username)) 
 					return p;
 			}
-			return null;
+			throw new IllegalArgumentException("No User with username: "+username+" in the DB");
 		}
 		
 		public static Person getPersonByToken(String token2) {
@@ -201,7 +203,7 @@ public class Person implements Serializable{
 					return p;
 				}
 			}
-			return null;
+			throw new IllegalArgumentException("No User with token: "+token2+" in the DB");
 		}
 
 }
