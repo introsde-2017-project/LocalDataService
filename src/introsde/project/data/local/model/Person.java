@@ -151,7 +151,7 @@ public class Person implements Serializable{
 
 	    public static Person savePerson(Person p){
 	    	if(Person.getPersonByUserName(p.getUserName())!=null) {
-	    		return null;
+	    		throw new IllegalArgumentException("The value is already in the list.");
 	    	}
 	        EntityManager em = DatabaseDao.instance.createEntityManager();
 	        EntityTransaction tx = em.getTransaction();
