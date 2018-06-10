@@ -19,7 +19,6 @@ import introsde.project.data.local.model.Person;
 @SOAPBinding(style = Style.DOCUMENT, use=Use.LITERAL)
 public interface UserInterface {
 	
-	
 	@WebMethod(operationName="addPerson")
     @WebResult(name="Person") 
 	public Person addNewPerson(
