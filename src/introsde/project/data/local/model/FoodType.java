@@ -16,18 +16,6 @@ public enum FoodType implements Serializable {
 	
 	
 	private String name;
-//	@ManyToOne
-//	@JoinColumn(name="personId",referencedColumnName="personId")
-//	private Person person;
-//	
-//	@XmlTransient
-//	public Person getPerson() {
-//		return person;
-//	}
-//
-//	public void setPerson(Person person) {
-//		this.person = person;
-//	}
 	
 	FoodType(String name) {
 		name=this.name;
