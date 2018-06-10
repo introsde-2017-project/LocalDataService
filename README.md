@@ -1,16 +1,9 @@
 # introsde-2017-project-LocalDataService  
  
  
-NAME: Cheema Danish Asghar  
-EMAIL: danishasghar.cheema@studenti.unitn.it  
- 
-Group partner:      
-NAME: Jan Main muhammad Faheem     
-EMAIL:main.jan@unitn.it    
- 
-Heroku WSDL ULR: https://dataservice-introsde-2018.herokuapp.com/ws/database?wsdl     
-GitHub ripo: https://github.com/introsde-2017-project/LocalDataService  
-Project WIKI: https://github.com/introsde-2017-project/Wiki   
+Heroku WSDL ULR: https://dataservice-introsde-2018.herokuapp.com/ws/database?wsdl    
+API Documantation: https://documenter.getpostman.com/view/2954866/RWEcNfqZ  
+Project Documantation: https://github.com/introsde-2017-project/documentation#introsde-project-2017  
 
 ## introduction:
 This is a local data layer for the `knowYourCity` app which uses local sqlite for store the user .   
