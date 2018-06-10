@@ -10,9 +10,6 @@ import introsde.project.data.local.model.Person;
 
 @WebService(endpointInterface = "introsde.project.data.local.soap.UserInterface")
 public class UserImpl implements UserInterface{
-	//@Resource
-    //WebServiceContext wsctx;
-	
 	
 	public UserImpl() {
 		
@@ -36,12 +33,14 @@ public class UserImpl implements UserInterface{
 
 	@Override
 	public Person updatePerson(Person person) {
-		return Person.updatePerson(person);
+		Person p= Person.updatePerson(person);
+		if(p==null)
+			throw new IllegalArgumentException("No User with username: \""+person.getUserName()+"\" in the DB");
+		return p;
 	}
 
 	@Override
 	public List<FoodType> getFoodTypes() {
-		
 		return FoodType.getAll();
 	}
 

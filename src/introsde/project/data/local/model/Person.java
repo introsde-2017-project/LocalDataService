@@ -25,6 +25,7 @@ import introsde.project.data.local.dao.DatabaseDao;
 @XmlRootElement(name="Person")
 public class Person implements Serializable{
 	
+	
 	 private static final long serialVersionUID = 1L;
 	 @TableGenerator(name = "Person_Gen", table = "ID_GEN", pkColumnName = "GEN_NAME", valueColumnName = "GEN_VAL", pkColumnValue = "Usr_Gen", initialValue = 100)
 	 @Id // defines this attributed as the one that identifies the entity 
@@ -166,6 +167,9 @@ public class Person implements Serializable{
 	    } 
 
 	    public static Person updatePerson(Person p) {
+	    	if(Person.getPersonByUserName(p.getUserName())!=null) {
+	    		return null;
+	    	}
 	        EntityManager em = DatabaseDao.instance.createEntityManager(); 
 	        EntityTransaction tx = em.getTransaction();
 	        tx.begin();
