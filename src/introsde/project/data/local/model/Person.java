@@ -167,7 +167,7 @@ public class Person implements Serializable{
 	    } 
 
 	    public static Person updatePerson(Person p) {
-	    	if(Person.getPersonByUserName(p.getUserName())!=null) {
+	    	if(Person.getPersonByUserName(p.getUserName())==null) {
 	    		return null;
 	    	}
 	        EntityManager em = DatabaseDao.instance.createEntityManager(); 
